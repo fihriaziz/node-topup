@@ -1,0 +1,23 @@
+<table id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for( let i = 0; i < category.length; i++ ) { %>
+            <tr>
+                <td><%= i + 1 %> </td>
+                <td><%= category[i].name  %> </td>
+                <td>
+                    <form action="/category/delete/<%= category[i]._id  %>?_method=DELETE" style="display: inline;" method="post">
+                        <a href="/category/edit/<%= category[i]._id  %>" class="btn btn-warning"><i class="fas fa-pencil"></i> Edit</a>
+                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i> Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
