@@ -1,0 +1,32 @@
+<%- include ../../partials/header.ejs  %> 
+<%- include ../../partials/navbar.ejs  %> 
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <%- include ../../partials/sidebar.ejs  %> 
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <%- include ../../partials/message.ejs %> 
+                <h1 class="mt-4">Nominal</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                    <li class="breadcrumb-item">Nominal</li>
+                    <li class="breadcrumb-item active"><a href="/nominal/create">Create</a></li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <a href="/nominal/create" class="btn btn-primary"><i class="nav-icon far fa-plus-square"></i> Create</a>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <%- include ./table.ejs  %> 
+                    </div>
+                </div>
+            </div>
+        </main>
+        <%- include ../../partials/footer.ejs  %> 
+        <%- include ../../partials/script.ejs  %> 
+    </div>
+</div>

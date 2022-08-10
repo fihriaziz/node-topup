@@ -1,0 +1,26 @@
+<table id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Name Owner</th>
+            <th>Name Bank</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for( let i = 0; i < bank.length; i++ ) { %>
+            <tr>
+                <td><%= i + 1 %> </td>
+                <td><%= bank[i].name  %> </td>
+                <td><%= bank[i].nameBank  %> </td>
+                <td><%= bank[i].noRekening  %> </td>
+                <td>
+                    <form action="/bank/delete/<%= bank[i]._id  %>?_method=DELETE" style="display: inline;" method="post">
+                        <a href="/bank/edit/<%= bank[i]._id  %>" class="btn btn-info text-white btn-sm"><i class="fas fa-pencil"></i> Edit</a>
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>

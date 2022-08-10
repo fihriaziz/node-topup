@@ -8,6 +8,7 @@ crossorigin="anonymous"
 src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
 crossorigin="anonymous"
 ></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="/startbootstrap-sb-admin/dist/assets/demo/chart-area-demo.js"></script>
 <script src="/startbootstrap-sb-admin/dist/assets/demo/chart-bar-demo.js"></script>
 <script
@@ -15,3 +16,16 @@ src="https://cdn.jsdelivr.net/npm/simple-datatables@latest"
 crossorigin="anonymous"
 ></script>
 <script src="/startbootstrap-sb-admin/dist/js/datatables-simple-demo.js"></script>
+<script src="/startbootstrap-sb-admin/dist/assets/select2/js/select2.full.min.js"></script>
+<script>
+    $(function(){
+
+    
+     $('.select2').select2()
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+    theme: 'bootstrap4'
+    })
+})
+</script>

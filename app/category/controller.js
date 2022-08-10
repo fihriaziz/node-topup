@@ -37,7 +37,7 @@ module.exports = {
       let category = await Category({name})
       await category.save();
 
-      req.flash('alertMessage', 'Created category successfully')
+      req.flash('alertMessage', 'Created category')
       req.flash('alertStatus', 'success')
 
       res.redirect('/category')
@@ -71,7 +71,7 @@ module.exports = {
         _id: id,
       }, {name});
 
-      req.flash('alertMessage', 'Updated category successfully')
+      req.flash('alertMessage', 'Updated category')
       req.flash('alertStatus', 'success')
 
       res.redirect('/category');
@@ -89,7 +89,7 @@ module.exports = {
         _id: id
       });
 
-      req.flash('alertMessage', 'Deleted category successfully')
+      req.flash('alertMessage', 'Deleted category')
       req.flash('alertStatus', 'success')
       res.redirect('/category');
     } catch (err) {

@@ -1,0 +1,55 @@
+<%- include ../../partials/header.ejs  %> 
+<%- include ../../partials/navbar.ejs  %> 
+<div id="layoutSidenav">
+    <div id="layoutSidenav_nav">
+        <%- include ../../partials/sidebar.ejs  %> 
+    </div>
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 class="mt-4">Bank</h1>
+                <ol class="breadcrumb mb-4">
+                    <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+                    <li class="breadcrumb-item"><a href="/bank">Bank</a></li>
+                    <li class="breadcrumb-item active">Create</li>
+                </ol>
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                        Form Edit Bank <%= bank.nameBank %> 
+                    </div>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="/bank/edit/<%= bank._id %>?_method=PUT" method="post">
+                                <div class="form-group">
+                                    <label for="name">Name owner</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Input owner name" required value="<%= bank.name %> "/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nameBank">Name bank</label>
+                                    <select class="form-control select2 " style="width: 100%;" name="nameBank" required>
+                                        <option selected="selected">Choose Bank</option>
+                                        <option value="BCA" <%= bank.nameBank === "BCA" ? "selected" : '' %> ">BCA</option>
+                                        <option value="BRI" <%= bank.nameBank === "BRI" ? "selected" : '' %> ">BRI</option>
+                                        <option value="BNI" <%= bank.nameBank === "BNI" ? "selected" : '' %> ">BNI</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="noRekening">No Rekening</label>
+                                    <input type="text" class="form-control" id="noRekening" name="noRekening" placeholder="Input no Rekening" required value="<%= bank.noRekening %> "/>
+                                </div>
+                                <div class="mt-3">
+                                    <button type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </main>
+        <%- include ../../partials/footer.ejs  %> 
+        <%- include ../../partials/script.ejs  %> 
+    </div>
+</div>

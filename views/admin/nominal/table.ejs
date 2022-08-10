@@ -1,0 +1,26 @@
+<table id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Coin Number</th>
+            <th>Coin Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for( let i = 0; i < nominal.length; i++ ) { %>
+            <tr>
+                <td><%= i + 1 %> </td>
+                <td><%= nominal[i].coinQuantity  %> </td>
+                <td><%= nominal[i].coinName  %> </td>
+                <td><%= nominal[i].price  %> </td>
+                <td>
+                    <form action="/nominal/delete/<%= nominal[i]._id  %>?_method=DELETE" style="display: inline;" method="post">
+                        <a href="/nominal/edit/<%= nominal[i]._id  %>" class="btn btn-info text-white btn-sm"><i class="fas fa-pencil"></i> Edit</a>
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
