@@ -1,0 +1,39 @@
+<table id="datatablesSimple">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Type </th>
+            <th>Bank</th>
+            <th>Status</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for( let i = 0; i < payment.length; i++ ) { %>
+            <tr>
+                <td><%= i + 1 %> </td>
+                <td><%= payment[i].type  %> </td>
+                <td>
+                    <% payment[i].banks.forEach(bank => { %>
+                        <span>
+                            <%= bank.name %> <%= bank.nameBank %>-<%= bank.noRekening  %> 
+                        </span>
+                    <% }) %> 
+                </td>
+                <td>
+                    <% if (payment[i].status === 'Y') { %>
+                        <span class="badge bg-success">Active</span>         
+                    <% } else { %>
+                        <span class="badge bg-danger">Non-Active</span>                
+                    <% } %> 
+                </td>
+                <td>
+                    <form action="/payment/delete/<%= payment[i]._id  %>?_method=DELETE" style="display: inline;" method="post">
+                        <a href="/payment/edit/<%= payment[i]._id  %>" class="btn btn-info text-white btn-sm"><i class="fas fa-pencil"></i> Edit</a>
+                        <button type="submit" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </tbody>
+</table>
